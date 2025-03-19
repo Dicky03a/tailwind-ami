@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Penjaminan Mutu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <!-- Spacer to force scrolling -->
+  <div class="h-screen flex items-center justify-center bg-gray-800 text-white text-2xl">
+    Scroll down to see the link
+  </div>
+  
+  <!-- Link container with relative positioning for the tooltip -->
+  <div id="linkContainer" class="relative p-6 bg-gray-900 text-white">
+    <a href="#" class="group flex items-center text-xl font-bold hover:text-blue-300 transition-colors">
+      Mengembangkan dan Mengimplementasikan Sistem Penjaminan Mutu
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+    
+    <!-- Tooltip that appears on scroll -->
+    <div id="tooltip" class="absolute -bottom-12 left-0 bg-blue-600 text-white py-2 px-4 rounded-md opacity-0 transition-opacity duration-500 shadow-lg">
+      Yaitu kampus yang islamic
+    </div>
+  </div>
+  
+  <!-- More content to enable scrolling -->
+  <div class="h-screen bg-gray-100 flex items-center justify-center text-xl">
+    Content continues here...
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const linkContainer = document.getElementById('linkContainer');
+      const tooltip = document.getElementById('tooltip');
+      
+      // Create an Intersection Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // When the link container is visible
+          if (entry.isIntersecting) {
+            // Show the tooltip
+            tooltip.classList.remove('opacity-0');
+            tooltip.classList.add('opacity-100');
+            
+            // Hide tooltip after 3 seconds
+            setTimeout(() => {
+              tooltip.classList.remove('opacity-100');
+              tooltip.classList.add('opacity-0');
+            }, 3000);
+          }
+        });
+      }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+      
+      // Start observing the link container
+      observer.observe(linkContainer);
+    });
+  </script>
+</body>
+</html>
