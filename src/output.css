@@ -434,11 +434,11 @@
   .-m-1\.5 {
     margin: calc(var(--spacing) * -1.5);
   }
-  .-m-2\.5 {
-    margin: calc(var(--spacing) * -2.5);
-  }
   .m-1\.5 {
     margin: calc(var(--spacing) * 1.5);
+  }
+  .m-2\.5 {
+    margin: calc(var(--spacing) * 2.5);
   }
   .-mx-3 {
     margin-inline: calc(var(--spacing) * -3);
@@ -458,9 +458,6 @@
   .my-6 {
     margin-block: calc(var(--spacing) * 6);
   }
-  .ms-5 {
-    margin-inline-start: calc(var(--spacing) * 5);
-  }
   .me-3 {
     margin-inline-end: calc(var(--spacing) * 3);
   }
@@ -472,9 +469,6 @@
   }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
-  }
-  .mt-4 {
-    margin-top: calc(var(--spacing) * 4);
   }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
@@ -2367,13 +2361,6 @@
       }
     }
   }
-  .group-hover\:opacity-75 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        opacity: 75%;
-      }
-    }
-  }
   .placeholder\:text-gray-500 {
     &::placeholder {
       color: var(--color-gray-500);
@@ -2397,13 +2384,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-indigo-400);
-      }
-    }
-  }
-  .hover\:text-gray-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-900);
       }
     }
   }
@@ -2446,11 +2426,6 @@
   .focus-visible\:outline-indigo-500 {
     &:focus-visible {
       outline-color: var(--color-indigo-500);
-    }
-  }
-  .max-sm\:h-80 {
-    @media (width < 40rem) {
-      height: calc(var(--spacing) * 80);
     }
   }
   .sm\:absolute {
@@ -2503,11 +2478,6 @@
       margin-inline: auto;
     }
   }
-  .sm\:mt-0 {
-    @media (width >= 40rem) {
-      margin-top: calc(var(--spacing) * 0);
-    }
-  }
   .sm\:mt-16 {
     @media (width >= 40rem) {
       margin-top: calc(var(--spacing) * 16);
@@ -2541,11 +2511,6 @@
   .sm\:flex {
     @media (width >= 40rem) {
       display: flex;
-    }
-  }
-  .sm\:aspect-2\/1 {
-    @media (width >= 40rem) {
-      aspect-ratio: 2/1;
     }
   }
   .sm\:w-\[72\.1875rem\] {
@@ -2725,11 +2690,6 @@
       display: none;
     }
   }
-  .lg\:aspect-square {
-    @media (width >= 64rem) {
-      aspect-ratio: 1 / 1;
-    }
-  }
   .lg\:max-w-none {
     @media (width >= 64rem) {
       max-width: none;
@@ -2822,15 +2782,6 @@
   .dark\:text-white {
     @media (prefers-color-scheme: dark) {
       color: var(--color-white);
-    }
-  }
-  .dark\:hover\:text-white {
-    @media (prefers-color-scheme: dark) {
-      &:hover {
-        @media (hover: hover) {
-          color: var(--color-white);
-        }
-      }
     }
   }
 }
